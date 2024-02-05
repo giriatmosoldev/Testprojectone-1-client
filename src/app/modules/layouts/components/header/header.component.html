@@ -1,0 +1,18 @@
+<div class="header-bar" [class]="{ 'container-expand': sidebarStatus }">
+	<div class="d-flex w-100 align-items-center justify-content-between">
+		<div (click)="toggleSidePanel()" class="icon-menu-expand menu-icon">
+			<span></span><span></span><span></span>
+		</div>
+		<div class="position-relative">
+		<div class="d-inline-block logout-dropdown" ngbDropdown #myDrop="ngbDropdown" >
+		 <button type="button" id="dropdownManual" class="dropdown-toggle" ngbDropdownToggle >
+			<i class="icon-user me-2"></i>
+			Administrator
+		 </button>
+		 <div ngbDropdownMenu aria-labelledby="dropdownManual">
+			<button ngbDropdownItem (click)="logout()">Logout</button>
+			</div>
+		</div>
+		</div>
+	</div>
+</div>

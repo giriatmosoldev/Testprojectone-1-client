@@ -1,0 +1,13 @@
+<div>
+  <div class="m-0 my-2 d-flex justify-content-between align-items-center">
+    <h6>Product Listing</h6>
+    <button class="p-2 primary-button-default">Add Entry</button>
+  </div>
+  <ag-grid-angular
+    style="width:100%; height: calc(100vh)"
+    [rowData]="productList"
+    [columnDefs]="customNames"
+    class="ag-theme-alpine"
+  >
+  </ag-grid-angular>
+</div>

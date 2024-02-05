@@ -1,0 +1,303 @@
+<div class="auth-form-section">
+    <div class="container">
+      <div class="h-100">
+        <div class="auth-form">
+          <div class="text-center">
+            <a class="" href="javascript:void(0)">
+              <img
+                src="../../../../../assets/images/low-code-logo.png"
+                class="main-logo"
+              />
+            </a>
+          </div>
+          <h2 class="auth-form-heading">Sign-up</h2>
+          <form class="row" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+            <div class="inputWithIcon">
+              <input
+                type="text"
+                formControlName="firstname"
+                placeholder="First Name"
+                class="input-field-auth"
+                autocomplete="firstname"
+              />
+              <div class="login-icon-wrapper">
+                <span class="icon-user"></span>
+              </div>
+              <div
+                [ngClass]="{
+                  'validation-text':
+                    isInvalidForm && formControls['firstname'].errors
+                }"
+                *ngIf="isInvalidForm && formControls['firstname']?.errors"
+              >
+                <div *ngIf="formControls?.['firstname']?.errors?.['required']">
+                  First name is required
+                </div>
+                <div *ngIf="formControls?.['firstname']?.errors?.['maxlength']">
+                  Maximum length of first name is 30
+                </div>
+                <div *ngIf="formControls?.['firstname']?.errors?.['minlength']">
+                  Minimum length of first name is 2
+                </div>
+                <div
+                  *ngIf="formControls?.['firstname']?.errors?.['cannotContainOnlySpace']"
+                >
+                  Only Space in first name is not allowed
+                </div>
+              </div>
+            </div>
+            <div class="inputWithIcon">
+              <input
+                type="text"
+                placeholder="Last Name"
+                class="input-field-auth"
+                autocomplete="lastname"
+                formControlName="lastname"
+              />
+              <div class="login-icon-wrapper">
+                <span class="icon-user"></span>
+              </div>
+              <div
+                [ngClass]="{
+                  'validation-text':
+                    isInvalidForm && formControls['lastname'].errors
+                }"
+                *ngIf="isInvalidForm && formControls['lastname']?.errors"
+              >
+                <div *ngIf="formControls?.['lastname']?.errors?.['required']">
+                  Last name is required
+                </div>
+                <div *ngIf="formControls?.['lastname']?.errors?.['maxlength']">
+                  Maximum length of last name is 30
+                </div>
+                <div *ngIf="formControls?.['lastname']?.errors?.['minlength']">
+                  Minimum length of last name is 2
+                </div>
+                <div
+                  *ngIf="formControls?.['lastname']?.errors?.['cannotContainOnlySpace']"
+                >
+                  Only Space in last name not allowed
+                </div>
+              </div>
+            </div>
+            <div class="inputWithIcon">
+              <input
+                type="text"
+                placeholder="Company Name"
+                class="input-field-auth"
+                autocomplete="companyname"
+                formControlName="companyName"
+              />
+              <div class="login-icon-wrapper">
+                <span class="icon-company"></span>
+              </div>
+              <div
+                [ngClass]="{
+                  'validation-text':
+                    isInvalidForm && formControls['companyName'].errors
+                }"
+                *ngIf="isInvalidForm && formControls['companyName']?.errors"
+              >
+                <div *ngIf="formControls?.['companyName']?.errors?.['required']">
+                  Company name is required
+                </div>
+                <div
+                  *ngIf="formControls?.['companyName']?.errors?.['cannotContainOnlySpace']"
+                >
+                  Only Space in company name not allowed
+                </div>
+              </div>
+            </div>
+            <div class="inputWithIcon country-code">
+              <div class="number-code">+1</div>
+              <input
+                type="text"
+                pattern="\d*"
+                maxlength="10"
+                placeholder="Phone Number"
+                class="input-field-auth"
+                autocomplete="phone"
+                formControlName="phone"
+              />
+              <div class="login-icon-wrapper">
+                <span class="icon-phone-number"></span>
+              </div>
+              <div
+                [ngClass]="{
+                  'validation-text': isInvalidForm && formControls['phone'].errors
+                }"
+                *ngIf="isInvalidForm && formControls['phone']?.errors"
+              >
+                <div *ngIf="formControls?.['phone']?.errors?.['required']">
+                  Phone number is required
+                </div>
+                <div
+                  *ngIf="formControls?.['phone']?.errors?.['phoneNumberValidation']"
+                >
+                  Please enter a 10 digit phone number
+                </div>
+              </div>
+            </div>
+            <div class="inputWithIcon">
+              <input
+                type="email"
+                placeholder="Email Address"
+                class="input-field-auth"
+                autocomplete="email"
+                formControlName="email"
+              />
+              <div class="login-icon-wrapper">
+                <span class="icon-email"></span>
+              </div>
+              <div
+                [ngClass]="{
+                  'validation-text': isInvalidForm && formControls['email'].errors
+                }"
+                *ngIf="isInvalidForm && formControls['email']?.errors"
+              >
+                <div *ngIf="formControls?.['email']?.errors?.['required']">
+                  Email is required
+                </div>
+                <div *ngIf="formControls?.['email']?.errors?.['pattern']">
+                  Email is not valid
+                </div>
+              </div>
+            </div>
+            <div class="inputWithIcon">
+              <input
+                type="password"
+                placeholder="Password"
+                class="input-field-auth"
+                autocomplete="current-password"
+                formControlName="password"
+              />
+              <div class="login-icon-wrapper">
+                <span class="icon-lock"></span>
+              </div>
+              <div
+                [ngClass]="{
+                  'validation-text':
+                    isInvalidForm && formControls['password'].errors
+                }"
+                *ngIf="isInvalidForm && formControls['password']?.errors"
+              >
+                <div *ngIf="formControls?.['password']?.errors?.['required']">
+                  Password is required
+                </div>
+                <div
+                  *ngIf="formControls?.['password']?.errors?.['passwordStrength']"
+                  class="password-error-message"
+                >
+                  Your password must contain atleast 1 uppercase letter, 1
+                  lowercase letter , 1 number, 1 special character and have a
+                  minimum of 8 characters.
+                </div>
+                <div *ngIf="formControls?.['password']?.errors?.['maxlength']">
+                  Maximum length of password is 50
+                </div>
+                <div
+                  *ngIf="formControls?.['password']?.errors?.['cannotContainSpace']"
+                >
+                  Cannot contain space in password
+                </div>
+              </div>
+            </div>
+            <div class="inputWithIcon">
+              <input
+                type="password"
+                placeholder="Confirm Password"
+                class="input-field-auth"
+                autocomplete="current-password"
+                formControlName="confirmpassword"
+              />
+              <div class="login-icon-wrapper">
+                <span class="icon-lock"></span>
+              </div>
+              <div
+                [ngClass]="{
+                  'validation-text':
+                    isInvalidForm && formControls['confirmpassword'].errors
+                }"
+                *ngIf="isInvalidForm && formControls['confirmpassword']?.errors"
+              >
+                <div
+                  *ngIf="formControls?.['confirmpassword']?.errors?.['required']"
+                >
+                  Confirm password is required
+                </div>
+                <div
+                  *ngIf="formControls?.['confirmpassword']?.errors?.['maxlength']"
+                >
+                  Maximum length of Confirm password is 50
+                </div>
+                <div
+                  *ngIf="formControls?.['confirmpassword']?.errors?.['minlength']"
+                >
+                  Minimum length of Confirm password is 8
+                </div>
+                <div
+                  *ngIf="formControls?.['confirmpassword']?.errors?.['passwordMismatch']"
+                >
+                  Confirm password does not match
+                </div>
+                <div
+                  *ngIf="formControls?.['confirmpassword']?.errors?.['cannotContainSpace']"
+                >
+                  Cannot contain space in confirm password
+                </div>
+              </div>
+            </div>
+            <div class="agree-terms text-start position-relative">
+              <input
+                class="styled-checkbox"
+                formControlName="tncchecklist"
+                id="styled-checkbox-1"
+                name="tandc"
+                type="checkbox"
+                value="yes"
+                required
+              />
+              <label for="styled-checkbox-1"
+                >I accept the <a href="#" target="_blank">Privacy Policy</a>
+              </label>
+              <div
+                [ngClass]="{
+                  'validation-text':
+                    isInvalidForm && formControls['tncchecklist'].errors
+                }"
+                *ngIf="isInvalidForm && formControls['tncchecklist'].errors"
+              >
+                <div *ngIf="formControls?.['tncchecklist']?.errors?.['required']">
+                  Privacy Policy should be checked
+                </div>
+              </div>
+            </div>
+            <div class="position-relative p-0 d-flex justify-content-center">
+              <button
+                class="primary-button-default mt-4"
+                type="submit"
+                [disabled]="isLoading"
+              >
+                <span
+                  *ngIf="isLoading"
+                  class="spinner-border spinner-border-sm mr-1"
+                ></span>
+                Register
+              </button>
+            </div>
+            <div class="sign-up mt-3">
+              <p>
+                Already have an Account?
+                <a href="javascript:void(0);" routerLink="/auth/login"
+                  ><b>Login</b></a
+                >
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="login-footer">
+      Copyright &copy; 2024 LowCode, LLC. All rights reserved.
+    </div>
+  </div>

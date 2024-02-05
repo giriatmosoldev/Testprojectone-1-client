@@ -1,0 +1,62 @@
+.form-control {
+    border-radius: 0px;
+    padding: 0.74rem 0.75rem;
+    background-color: var(--grey100);
+    &:focus {
+        background-color: var(--grey100);
+        outline: none;
+        box-shadow: none;
+        border-color: var(--heading-text-color);
+    }
+}
+//Checkbox
+.form-check {
+    .form-check-input {
+        border-radius: 0;
+        width: 1.2em;
+        height: 1.2em;
+        margin-top: 0.15em;
+        &:focus {
+            outline: 0px;
+            box-shadow: none;
+        }
+
+        &:checked {
+            background-color: var(--primary-default);
+            border-color: var(--primary-default);
+        }
+    }
+    label {
+        padding-left: 5px;
+    }
+}
+
+.type-password {
+    position: relative;
+    .form-control{
+        padding-right:3rem;
+    }
+    .icon-position {
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        padding: 17px;
+        cursor: pointer;
+    }
+   
+}
+
+.form-select {
+    color: var(--body-text-color) !important;
+    option {
+        height: 40px !important;
+        padding: 10px 20px !important;
+        &:hover {
+            background-color: var(--dashboard-bg) !important;
+        }
+       
+    }
+}
+.field-wrapper {
+    margin-bottom: 10px;
+}

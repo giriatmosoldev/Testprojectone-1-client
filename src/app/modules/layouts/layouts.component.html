@@ -1,0 +1,14 @@
+<div>
+  <app-page-loader></app-page-loader>
+  <app-side-panel [showSideBar]="sidePanelVisible"></app-side-panel>
+  <section
+    class="lc-main-container"
+    [class]="{ 'container-expand': sidePanelVisible }"
+  >
+    <app-header [sidebarStatus]="sidePanelVisible"></app-header>
+    <section class="lc-content">
+      <router-outlet></router-outlet>
+    </section>
+    <app-footer></app-footer>
+  </section>
+</div>

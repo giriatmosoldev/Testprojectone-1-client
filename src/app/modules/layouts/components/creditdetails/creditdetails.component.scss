@@ -1,0 +1,31 @@
+div {
+  margin: 20px;
+}
+
+div h2 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+div form {
+  display: flex;
+  flex-direction: column;
+}
+
+div form button {
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+div ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+div ul li {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+}

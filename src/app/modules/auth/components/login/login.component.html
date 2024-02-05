@@ -1,0 +1,117 @@
+<section class="home-section">
+    <div class="page-spacing">
+        <div class="pages-view-options-grid">
+          <div class="pages-view-item">
+            <div class="pages-card">
+              <div class="pages-body-login1">
+                <div class="d-block w-100">
+                  <div
+                    class="d-flex flex-wrap w-100 align-items-center login-content-wrapper1"
+                  >
+                    <div class="flex-grow-1 me-3">
+                      <h5 class="light-text-color">Testprojectone-1</h5>
+                      <h3 class="text-white">
+                        Delivering beyond <br />
+                        possible solutions
+                      </h3>
+                    </div>
+                    <div class="d-inline-flex">
+                      <div class="th-admin-login-wrapper text-center">
+                      <div  class="d-block w-100">
+                        <form [formGroup]="loginForm" (ngSubmit)="loginForm.valid && onSubmit()" class="d-block w-100">
+                          <h6 class="mb-4 text-start">Login</h6>
+                          <div class="field-wrapper">
+                            <label class="mb-1 text-start d-block">
+                              Username
+                            </label>
+                            <input type="text" formControlName="username" class="form-control" />
+                            <div
+                            class="validation-text text-start"
+                            *ngIf="loginForm.invalid && (formControls?.['username']?.dirty || formControls?.['username']?.touched)"
+                            >
+                              <small
+                                class="text-danger mt-1"
+                                *ngIf="formControls?.['username']?.errors?.['required']"
+                              >
+                                Required<sup>*</sup>
+                              </small>
+                              <small
+                                class="text-danger mt-1"
+                                *ngIf="formControls?.['username']?.errors?.['pattern']"
+                              >
+                                username is not valid
+                              </small>
+                            </div>
+                          </div>
+
+                          <div class="field-wrapper">
+                            <label class="mb-1 text-start d-block">
+                              Password
+                            </label>
+                            <input type="password" formControlName="password" class="form-control" />
+
+                            <div
+                            class="validation-text text-start"
+                            *ngIf="loginForm.invalid && (formControls?.['password']?.dirty || formControls?.['password']?.touched)"
+                            >
+                              <small
+                                class="text-danger mt-1"
+                                *ngIf="formControls?.['password']?.errors?.['required']"
+                              >
+                                Required<sup>*</sup>
+                              </small>
+                              <small
+                                class="text-danger mt-1"
+                                *ngIf="formControls?.['password']?.errors?.['pattern']"
+                              >
+                                password is not valid
+                              </small>
+                            </div>
+
+                          </div>
+                          <div
+                            class="d-flex justify-content-between field-wrapper w-100"
+                          >
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                                checked
+                              />
+                              <label
+                                class="form-check-label"
+                                for="flexCheckChecked"
+                              >
+                                Remember Me
+                              </label>
+                            </div>
+                            <a routerLink="/auth/forgotpassword" class="anchor-text-color anchor-link"
+                              >Forgot Password</a
+                            >
+                          </div>
+
+                          <button type="submit" class="primary-button-default w-100">
+                          <div class="spinner-border" role="status" *ngIf="isLoading"></div>
+                            Login
+                          </button>
+
+                          <div class="pt-3">
+                            Don't have an account?
+                            <a routerLink="/auth/signup" class="primary-text-color anchor-hover"
+                              >Signup Now</a
+                            >
+                          </div>
+                        </form>
+                      </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+</section>

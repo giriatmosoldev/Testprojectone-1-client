@@ -1,0 +1,73 @@
+.primary-button-default {
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 0.884rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-default);
+    border-radius: 0;
+    cursor: pointer;
+    border: 0;
+    color: var(--white);
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+        box-shadow 0.15s ease-in-out;
+
+    &:disabled {
+        opacity: 0.5;
+    }
+    &:hover {
+        color: var(--white);
+    }
+}
+
+.button-min-width {
+    min-width: 120px;
+}
+
+.button-icon-size {
+    font-size: 22px;
+}
+
+.animated {
+    position: relative;
+    text-decoration: none;
+    &:after {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 0%;
+        bottom: 0px;
+        left: 0%;
+        height: 3.4px;
+        background: var(--primary-default-dark);
+        transition: width 0.3s ease;
+    }
+    &:hover {
+        &:after{
+            width: 100%; /* Show border on hover */
+        }
+    }
+}
+
+
+.secondary-button-default {
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 0.803rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--white);
+    border-radius: 0;
+    cursor: pointer;
+    border: 1px solid var(--primary-default);
+    color: var(--primary-default);
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+    &:disabled {
+        opacity: 0.5;
+    }
+}
+
+

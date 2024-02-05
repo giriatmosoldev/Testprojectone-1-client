@@ -1,0 +1,18 @@
+<div [ngClass]="{ 'sidebar open': true, 'close-sidebar': showSideBar }">
+  <div class="mobile-sidebar">
+    <div class="logo-details d-flex align-items-center justify-content-center">
+      <div class="logo-icon-container">
+        <img src="assets/images/logo.png" class="img-size" />
+        <img src="assets/images/low-code-text.png" class="logo_name" />
+      </div>
+    </div>
+   <ul class="nav-links">
+      <li *ngFor="let item of menuItems">
+        <a href="#">
+          <i class="sidebar-icon icon-users"></i>
+          <div class="link_name">{{ item }}</div>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
